@@ -1,0 +1,18 @@
+{
+  "name": "nextgrowth-mvp",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "npm run dev -w backend",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "typecheck": "npm run typecheck -w backend && npm run typecheck -w frontend",
+    "start:frontend": "npm run start -w frontend",
+    "start:backend": "npm run start -w backend",
+    "ci": "npm run typecheck && npm run build"
+  }
+}
