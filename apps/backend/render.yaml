@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: diginuxteu-backend
+    runtime: node
+    plan: free
+    region: frankfurt
+    rootDir: apps/backend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: CORS_ORIGIN
+        sync: false
